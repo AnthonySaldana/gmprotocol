@@ -6,7 +6,7 @@ export const pgp = PgPromise();
 
 // Database connection for external public-facing APIs
 export const edb = pgp({
-  connectionString: config.databaseUrl,
+  connectionString: config.databaseUrl + "?sslmode=require",
   keepAlive: true,
   max: 15,
   connectionTimeoutMillis: 10 * 1000,
@@ -20,7 +20,7 @@ export const edb = pgp({
 
 // Database connection for internal processes/APIs
 export const idb = pgp({
-  connectionString: config.databaseUrl,
+  connectionString: config.databaseUrl + "?sslmode=require",
   keepAlive: true,
   max: 15,
   connectionTimeoutMillis: 30 * 1000,
@@ -34,7 +34,7 @@ export const idb = pgp({
 
 // Database connection for external public-facing APIs using a read replica DB
 export const redb = pgp({
-  connectionString: config.readReplicaDatabaseUrl,
+  connectionString: config.readReplicaDatabaseUrl + "?sslmode=require",
   keepAlive: true,
   max: 30,
   connectionTimeoutMillis: 30 * 1000,
