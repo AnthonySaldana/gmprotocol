@@ -24,10 +24,10 @@ export const config = {
   metadataIndexingMethod: String(process.env.METADATA_INDEXING_METHOD || "opensea"),
   metadataApiBaseUrl: String(process.env.METADATA_API_BASE_URL),
 
-  databaseUrl: String(process.env.HEROKU_POSTGRESQL_GRAY_URL),
-  readReplicaDatabaseUrl: String(process.env.READ_REPLICA_DATABASE_URL || process.env.HEROKU_POSTGRESQL_GRAY_URL),
+  databaseUrl: String(process.env.HEROKU_POSTGRESQL_GOLD_URL),
+  readReplicaDatabaseUrl: String(process.env.READ_REPLICA_DATABASE_URL || process.env.HEROKU_POSTGRESQL_GOLD_URL),
   writeReplicaDatabaseUrl: String(
-    process.env.WRITE_REPLICA_DATABASE_URL || process.env.HEROKU_POSTGRESQL_GRAY_URL
+    process.env.WRITE_REPLICA_DATABASE_URL || process.env.HEROKU_POSTGRESQL_GOLD_URL
   ),
   redisUrl: String(process.env.REDIS_URL),
 
