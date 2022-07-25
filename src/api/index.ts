@@ -87,11 +87,7 @@ export const start = async (): Promise<void> => {
   // Create all supported sources
   await Sources.syncSources();
 
-  const apiDescription =
-    "You are viewing the reference docs for the Reservoir API.\
-    \
-    For a more complete overview with guides and examples, check out the <a href='https://reservoirprotocol.github.io'>Reservoir Protocol Docs</a>.";
-
+  const apiDescription = "You are viewing the reference docs for the GM Protocol API.";
   await server.register([
     {
       plugin: Inert,
@@ -113,13 +109,13 @@ export const start = async (): Promise<void> => {
           },
         },
         schemes: ["https", "http"],
-        host: `${config.chainId === 1 ? "api" : `api-${getNetworkName()}`}.reservoir.tools`,
+        host: `${config.chainId === 1 ? "gm-protocol-api" : `gm-protocol-api-${getNetworkName()}`}.herokuapp.com`,
         cors: true,
         tryItOutEnabled: true,
         documentationPath: "/",
         sortEndpoints: "ordered",
         info: {
-          title: "Reservoir API",
+          title: "GM Protocol API",
           // eslint-disable-next-line @typescript-eslint/no-var-requires
           version: require("../../package.json").version,
           description: apiDescription,

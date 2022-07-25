@@ -7,7 +7,7 @@ dotEnvConfig();
 import axios from "axios";
 import { genericTaker, simulateBuyTx } from "../utils/tenderly";
 
-const BASE_URL = "https://api.reservoir.tools";
+const BASE_URL = "https://gm-protocol-api.herokuapp.com";
 
 const main = async () => {
   const collections = [
